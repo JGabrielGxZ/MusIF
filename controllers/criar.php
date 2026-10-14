@@ -1,8 +1,9 @@
 <?php
+
     include_once "../config/db.php";
 
-    $db = new db();
-    $conn = $db->conectar();
+    $database = new db();
+    $conn = $database->conectar();
 
     $email = $_POST['email'];
     $pass = $_POST['pass'];
@@ -14,9 +15,10 @@
         $stmt->bindParam(':p', $pass);
         
         if ($stmt->execute()) {
-            echo "Deu certo!";
+            echo "deu certo";
         }
+
     } catch (PDOException $e) {
-        die($e->getMessage());
+        die("deu erro: " . $e->getMessage());
     }
 ?>
