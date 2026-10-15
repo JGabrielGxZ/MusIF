@@ -2,23 +2,21 @@
     include_once "../config/db.php";
     class UsuarioModel{
         private PDO $conn;
-        private $matricula;
-        private $senha;
 
-        public function __construct(PDO $conn, string $matricula, string $senha) {
+        public function __construct(PDO $conn) {
             $this->conn = $conn;
-            $this->matricula = $matricula;
-            $this->senha = $senha;
         }
-        public function login() {
+        public function login(string $mat, string $pass) {
             $sql = "SELECT * FROM usuario WHERE matricula = :m";
             $stmt = $this->conn->prepare($sql);
-            $stmt->bindParam(":m", $this->matricula);
+            $stmt->bindParam(":m", $mat);
             $stmt->execute();
-
-            if ($stmt->rowCount() === 1) {
-                $usuario = $stmt->fetch();
-                $usuario[''];
+            $usuario = $stmt->fetch();
+            if ($usuario !== false) {
+                if ($usuario['senha'] === $pass) {
+                    $_SESSION['matricula'] = $mat;
+                    return true;
+                }
             }
         }
 
