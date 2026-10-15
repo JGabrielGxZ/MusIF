@@ -27,6 +27,9 @@
                 // Faz com que os erros do banco sejam tratados como exceções
                 // Assim, se algo der errado, o PHP consegue identificar o erro
                 $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                
+                //
+                $this->conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
                 // Devolve a conexão para que outras partes do sistema possam usá-la
                 return $this->conn;
