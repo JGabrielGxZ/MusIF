@@ -1,5 +1,6 @@
 <?php
     require_once __DIR__ . "/../config/db.php";
+    require_once __DIR__ ."/../config/config.php";
     require_once __DIR__ . "/../models/usuarioModel.php";
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -14,7 +15,9 @@
             $resultado = $usuario->login($mat, $pass);
             
 
-            if ($resultado === true) {
+            if ($resultado !== false) {
+                $_SESSION['matricula'] = $resultado['matricula'];
+                
                 header('Location: ../index.php');
                 exit;
             } else {

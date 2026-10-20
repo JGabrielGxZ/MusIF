@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    require_once __DIR__ . "/config/config.php";
     include_once 'config/db.php';
     if (!isset($_SESSION['matricula'])) {
         header('Location: views/login.php');

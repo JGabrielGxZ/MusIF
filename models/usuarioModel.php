@@ -1,6 +1,4 @@
 <?php
-    session_start();
-    include_once "../config/db.php";
     class UsuarioModel{
         private PDO $conn;
 
@@ -16,8 +14,7 @@
 
             if ($usuario !== false) {
                 if (password_verify($pass, $usuario['senha'])) {
-                    $_SESSION['matricula'] = $usuario['matricula'];
-                    return true;
+                    return $usuario;
                 }
             }
         }
