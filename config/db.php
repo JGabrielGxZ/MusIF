@@ -1,4 +1,3 @@
-```php
 <?php
     class db {
         // Dados necessários para acessar o nosso banco de dados
@@ -45,4 +44,3 @@
         }
     }
 ?>
-```

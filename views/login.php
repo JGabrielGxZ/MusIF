@@ -8,7 +8,7 @@
 <body>
     <h1>Login:</h1>
 
-    <form action="../controllers/loginController.php" method="post">
+    <form action="../controllers/loginController.php" method="POST">
         <label for="mat-input">matricula:</label>
         <input type="text" name="mat" id="mat-input" placeholder="digite sua Matricula!" required>
         <label for="pass-input">senha:</label>

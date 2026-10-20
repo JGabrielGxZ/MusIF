@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include_once "../config/db.php";
     class UsuarioModel{
         private PDO $conn;
@@ -12,9 +13,10 @@
             $stmt->bindParam(":m", $mat);
             $stmt->execute();
             $usuario = $stmt->fetch();
+
             if ($usuario !== false) {
-                if ($usuario['senha'] === $pass) {
-                    $_SESSION['matricula'] = $mat;
+                if (password_verify($pass, $usuario['senha'])) {
+                    $_SESSION['matricula'] = $usuario['matricula'];
                     return true;
                 }
             }
