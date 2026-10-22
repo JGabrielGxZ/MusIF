@@ -17,10 +17,6 @@
     <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body>
-    <form action="/Musif/controllers/logout.php" method="post">
-        <button type="submit">Sair</button>
-    </form>
-
     <header>
         <div class="logo-index-1">
             <i class="bi bi-music-note-list" class="icone_logo-index-1"></i>
@@ -32,18 +28,27 @@
 
     
     <aside class="aside-index-1">
-        <nav>
-            <div class="nav-index-1">
+        <nav class="nav-index-1">
+            <div class="links_top-index-1">
                 <a href=""><i class="bi bi-house-fill"></i>Início</a>
                 <a href=""><i class="bi bi-music-note-beamed"></i>Instrumentos</a>
                 <a href=""><i class="bi bi-repeat"></i>Empréstimos</a>
                 <a href=""><i class="bi bi-gear-fill"></i>Configurações</a>
             </div>
+
+            <div class="links_down-index">
+                <form action="/Musif/controllers/logout.php" method="post">
+                    <button type="submit"><i class="bi bi-door-closed"></i></button>
+                </form>
+            </div>
+            <script>
+            
+            </script>
         </nav>
     </aside>
 
-    <article>
-        <section>
+    <article class="article-index-1">
+        <section class="section-index-1">
 
         </section>
     </article>
@@ -51,7 +56,8 @@
     </main>
 
     <footer>
-
+        
     </footer>
 </body>
+<script src="assets/js/index.js"></script>
 </html>

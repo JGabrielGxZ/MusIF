@@ -2,6 +2,12 @@ header{
     display: flex;
     align-items: center;
     position: fixed;
+    background-color: red;
+    width: 100%;
+    left: 0;
+    height: 100px;
+    top: 0;
+    
 }
 .logo-index-1{
     display: flex;
@@ -14,16 +20,20 @@ header{
 
 main{
     display: flex;
+    padding-top: 92px;
+    
 }
 .aside-index-1{
     display: flex;
     position: fixed;
     left: 0;
-    padding-top: 100px;
+    background-color: aqua; 
+    height: 90%;
 }
 
 .aside-index-1 nav{
     display: flex;
+    width: 200px;
 }
 
 .nav-index-1{
@@ -31,15 +41,35 @@ main{
     flex-direction: column;
 }
 
-.nav-index-1 a{
-    text-decoration: none;
-    color: black;
+.links_top-index-1{
     padding: 8px;
     border-radius: 10px;
-    font-size: 18px;
+    display: flex;
+    flex-direction: column;
 }
 
-.nav-index-1 a i{
-    font-size: 20px;
+.links_top-index-1 a{
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+    padding-bottom: 20px;
+}
+
+.links_top-index-1 a i{
+    font-size: 25px;
     padding-right: 10px;
+}
+
+.article-index-1{
+    display: flex;
+}
+
+button{
+    border: none;
+    background: none;
+}
+
+.bi{
+    font-size: 20px;
+    cursor: pointer;
 }
